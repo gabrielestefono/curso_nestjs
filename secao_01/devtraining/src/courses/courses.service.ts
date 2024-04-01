@@ -1,8 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Course } from './entities/courses.entity';
 
 @Injectable()
 export class CoursesService {
-	private courses = [
+	private courses: Course[]  = [
 		{
 			id: 1,
 			name: 'Curso de NestJS',
