@@ -3,6 +3,7 @@ import { dataSourceOptions } from './database.module';
 import { DataSource } from "typeorm";
 import { CreateTagsTable1712246021569 } from 'src/migrations/1712246021569-CreateTagsTable';
 import { CoursesTagsTable1712254189974 } from 'src/migrations/1712254189974-CoursesTagsTable';
+import { AddCoursesIdToCoursesTagsTable1712254866768 } from 'src/migrations/1712254866768-AddCoursesIdToCoursesTagsTable';
 
 export const dataSource = new DataSource({
 	...dataSourceOptions,
@@ -10,7 +11,8 @@ export const dataSource = new DataSource({
 	migrations: [
 		CreateCoursesTable1712244542866,
 		CreateTagsTable1712246021569,
-		CoursesTagsTable1712254189974
+		CoursesTagsTable1712254189974,
+		AddCoursesIdToCoursesTagsTable1712254866768
 	]
 })
 
