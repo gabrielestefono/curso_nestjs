@@ -115,4 +115,16 @@ describe('CoursesService', () => {
     expect(mockCourseRepository.preload).toHaveBeenCalled();
     expect(expectedOutputCourses).toStrictEqual(updateCourse);
   });
+
+  it('Deve Excluir um Curso por id', async () => {
+    // @ts-expect-error defined part of methods
+    service['courseRepository'] = mockCourseRepository;
+    // @ts-expect-error defined part of methods
+    service['tagRepository'] = mockTagRepository;
+
+    const deletedCourse = await service.remove(id);
+
+    expect(mockCourseRepository.remove).toHaveBeenCalled();
+    expect(expectedOutputCourses).toStrictEqual(deletedCourse);
+  });
 });
