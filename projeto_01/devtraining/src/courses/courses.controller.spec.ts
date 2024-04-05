@@ -1,13 +1,12 @@
 import { CoursesController } from './courses.controller';
 
-describe('CoursesController', () => {
+describe('Controller de Cursos - Testes unitários', () => {
   let controller: CoursesController;
-
   beforeEach(async () => {
     controller = new CoursesController();
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
+	it('Controller', ()=>{
+    expect(controller).toBeDefined()
+  })
 });

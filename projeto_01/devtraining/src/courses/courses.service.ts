@@ -13,7 +13,7 @@ export class CoursesService {
 	private readonly courseRepository: Repository<Course>
 	
 	@InjectRepository(Tag)
-	private readonly TagRepository: Repository<Tag>
+	private readonly tagRepository: Repository<Tag>
 	
 	async findAll(){
 		return await this.courseRepository.find({
@@ -73,10 +73,10 @@ export class CoursesService {
 
 	private async preloadTagByName(nome: string): Promise<Tag>
 	{
-		const tag = await this.TagRepository.findOne({where: {nome}})
+		const tag = await this.tagRepository.findOne({where: {nome}})
 		if(tag != null){
 			return tag;
 		}
-		return this.TagRepository.create({nome})
+		return this.tagRepository.create({nome})
 	}
 }
